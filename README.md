@@ -1,171 +1,92 @@
-# ComplexFractals  
+# ComplexFractals
 
-**ComplexFractals** is a mathematically-driven creative-coding project that transforms complex-number dynamics into vivid, high-resolution generative artworks.  
-Instead of limiting itself to traditional fractal sets (like Mandelbrot or Julia), this project explores the far richer universe of **Littlewood polynomials** and other customizable iterative functions — letting you dive into structures that are chaotic, elegant, and often visually mind-bending.
+**ComplexFractals** is a creative-coding project that transforms pure mathematics into vivid, generative artworks. It dives into the dynamic world of complex numbers — not just the familiar Mandelbrot and Julia sets, but the broader and far more unpredictable territory of **Littlewood polynomials** and custom iterative functions.  
 
-By blending:  
-- **complex-plane mappings**,  
-- **iterative evaluation**,  
-- **escape-time / convergence logic**, and  
-- **dynamic color-mapping**,  
-
-the project turns abstract mathematical behavior into expressive visual geometry. It is both a playground for artistic exploration and a hands-on laboratory for anyone who enjoys experimenting with complex dynamical systems.
+The goal is simple: take the invisible logic of complex dynamics and let it bloom into geometry, color, movement, and structure. Every render becomes a small universe — delicate, chaotic, alien, or unexpectedly harmonious — shaped entirely by the numbers you feed it.
 
 ---
 
-## 📑 Contents
+## 📑 What’s Inside
 
-Inside the `/code` directory you will find the full Processing-based implementation:
+All core functionality lives in the `/code` directory and is written in **Processing (Java)**. Each pixel on the screen represents a complex number that is iterated through a chosen function. The outcome of that iteration — whether the point diverges, converges, oscillates, or behaves strangely — determines its final color.
 
-- All source files are written in **Processing (Java)**.
-- Parameters are fully customizable:  
-  - Polynomial coefficients  
-  - Iteration depth / maximum iteration threshold  
-  - Color palettes and mapping styles  
-  - Complex plane window (zooming, panning, scaling)  
-- Every pixel represents a complex value that undergoes repeated evaluation using a Littlewood polynomial or related function.  
-- Each pixel is then colored using criteria such as:  
-  - Divergence speed  
-  - Convergence behavior  
-  - Iteration count  
-  - Custom gradient or palette transformations  
+You are free to control everything: the coefficients of the polynomial, the number of iterations, the zoom window inside the complex plane, and the color mapping itself. Small changes often produce dramatic visual shifts, so exploring different configurations quickly becomes an artistic journey as much as a mathematical one.
 
-This architecture allows for an enormous variety of emergent patterns — from smooth flowing fields to intricate branching structures reminiscent of classical fractal sets, but with a far broader expressive range.
+This architecture gives rise to a huge range of emergent patterns — from fluid, swirling textures to sharply branching structures reminiscent of fractals, but with far more expressive possibilities.
 
 ---
 
 ## 🛠️ Getting Started
 
-### Prerequisites
-
-Before running the project, ensure you have:  
-
-- **Processing** installed (Java mode) – https://processing.org/  
-- A local clone or downloaded copy of this repository  
-
-Processing is lightweight and cross-platform, so setup should take only a minute.
+To run the project, you’ll need **Processing (Java mode)** installed on your system. Once you have it, simply clone or download the repository and open the main `.pde` file. Processing handles everything else — it’s lightweight, cross-platform, and easy to set up.
 
 ---
 
-## ▶️ Installation & Running
+## ▶️ Running the Project
 
-Getting started is simple:
+Launch Processing, open the sketch, adjust whatever parameters inspire you, and press **Run**.  
+Immediately, a complex-dynamics canvas appears, alive with mathematical behavior.  
 
-1. **Clone or download** this repository to your machine.  
-2. Launch **Processing**, then open the main `.pde` file located inside the project folder.  
-3. **Adjust parameters** to your liking:  
-   - polynomial coefficients  
-   - iteration limits  
-   - zoom / region boundaries  
-   - color modes  
-4. Hit **Run**. A real-time fractal visualization window will open immediately.  
-5. (Optional) Use Processing’s built-in features to **export snapshots or render animations** – ideal for generating wallpapers, high-res prints, looping videos, or motion-art sequences.
+You can experiment with:
+- the polynomial’s coefficients,  
+- iteration depth,  
+- zoom and pan settings,  
+- and any color palette or shading style you feel like trying.
+
+Processing also allows snapshot and animation export, enabling you to create wallpapers, posters, motion loops, or high-resolution prints with minimal effort.
 
 ---
 
 ## 🔧 What You Can Tweak / Explore
 
-ComplexFractals is intentionally open-ended — nearly every mathematical or visual parameter can be shaped, remixed, and pushed to extremes. This freedom makes the project both a creative tool and a deep experimental sandbox.
+ComplexFractals is built to be explored. Almost every parameter can be pushed, stretched, or transformed, giving you a playground where mathematics and creativity meet.
 
-### **• Polynomial Coefficients & Function Structure**
-You aren’t limited to the classical  
+### **Polynomial & Function Design**  
+You’re not locked into the standard  
 \[
 z_{n+1} = z_n^2 + c
 \]  
-Instead, you can modify or completely redefine the underlying function. Try higher-degree polynomials, asymmetric coefficient sets, or even hybrid functions. Each small change often reshapes the entire fractal landscape, generating structures that feel alien compared to classical fractals.
+You can define your own polynomial or hybrid expression. Even tiny coefficient changes can alter the entire global structure of the render, revealing strange attractors, spiraling fields, or beautifully organized chaos.
 
----
+### **The Viewport of the Complex Plane**  
+By adjusting real and imaginary bounds, zooming into microstructures, or shifting your view across the plane, you uncover entirely new visual ecosystems. Deep zooming often reveals internal patterns that weren’t visible before.
 
-### **• Complex-Plane Viewport**
-Adjust the region of the complex plane that the renderer observes:
-- Modify **real** and **imaginary** boundaries  
-- **Zoom** deeply into microstructures  
-- **Pan** across the plane to discover new attractors and chaotic pockets  
+### **Iteration Behavior & Escape Logic**  
+Changing the iteration limit or the criteria that determine when a point “escapes” will dramatically influence the final texture of the image. Higher iteration counts produce more detail but require more computation — a classic tradeoff in fractal exploration.
 
-Exploring different windows often reveals patterns within patterns — spirals, filaments, islands, and unexpected symmetry.
+### **Color Mapping**  
+Color gives emotional tone to your fractal. Whether you choose smooth gradients, harsh banding, neon glows, or subtle earth tones, the palette reshapes how the structure feels. You can base colors on escape velocity, convergence, or even custom algorithms.
 
----
-
-### **• Iteration Depth & Escape Criteria**
-Control:
-- Maximum iteration count  
-- Escape thresholds  
-- Convergence tolerances  
-
-Higher iteration caps expose finer details at the cost of compute time. Playing with escape criteria can produce smooth, organic gradients or sharp, crystalline edges depending on how strict you make them.
-
----
-
-### **• Color Mapping & Visual Modes**
-Color is fully programmable. You can map colors based on:
-- Iteration count  
-- Escape velocity  
-- Convergence basin  
-- Smooth coloring algorithms  
-- Custom gradient palettes  
-- Banding, noise, harmonic cycles  
-
-This allows artistic control over mood — from neon chaos to soft watercolor-like flows.
-
----
-
-### **• Animation & Time-Based Evolution**
-Turn static fractals into moving, morphing structures by:
-- Varying coefficients over time  
-- Shifting the complex-plane viewport  
-- Cycling through color schemes  
-- Animating parameters such as angle, magnitude, or interpolation weights  
-
-These generative animations can resemble living organisms, liquid geometry, or pulsating cosmic forms.
+### **Animation & Evolving Structures**  
+The project supports time-varying parameters, letting you create animations where the fractal morphs organically. Coefficients can drift, palettes can shift, and the viewpoint can glide across the complex plane — resulting in visuals that feel living and fluid.
 
 ---
 
 ## 🎯 Why This Matters
 
-### **• A Playground for Generative Art**
-By merging mathematics with visual experimentation, ComplexFractals produces images that are intricate, alien, and often breathtaking. Many results look like:
-- Organic growth  
-- Cosmic structures  
-- Biological systems  
-- Crystalline formations  
-- Abstract digital sculptures  
+### **A Space for Generative Art**  
+ComplexFractals isn’t just a math tool — it’s a creative instrument. With each adjustment, you may discover something unexpected: patterns resembling biological growth, cosmic filaments, crystalline networks, or entirely abstract geometric worlds. Many users treat it as a generative-art engine.
 
-It’s an ideal platform for artists exploring algorithmic aesthetics.
-
-### **• A Hands-On Lab for Complex Dynamics**
-Every tweak teaches something:
-- How systems behave near chaotic regions  
-- How convergence basins form  
-- How parameter changes reshape global structure  
-- How polynomial degree affects stability and divergence  
-
-It's a direct way to *see* math in action and develop intuition about nonlinear dynamical systems.
+### **A Hands-On Window Into Complex Dynamics**  
+The project also acts as a laboratory for understanding nonlinear systems. Each render reveals how tiny numerical changes ripple outward, how attractors form, how chaotic zones interact, and how iteration rules sculpt entire visual landscapes. It’s a way to *see* complex dynamics rather than just study them.
 
 ---
 
 ## 💡 Inspiration & References
 
-### **• Classical Fractal Iteration (Mandelbrot / Julia Sets)**
-Traditional fractals iterate the map:
+Mathematically, the project draws inspiration from classical fractals like the Mandelbrot and Julia sets, which iterate the iconic formula  
 \[
 z_{n+1} = z_n^2 + c
-\]
-Each pixel is a complex coordinate whose trajectory determines its color. Escape-time methods highlight how quickly points diverge, producing the iconic boundary patterns.
+\]  
+mapping each pixel to a complex coordinate whose behavior determines its color.
 
-### **• Beyond Classical Fractals**
-Many visualizers stop at quadratic or simple complex functions.  
-ComplexFractals opens the door to:  
-- Higher-degree polynomials  
-- Littlewood polynomials  
-- Nonlinear composites  
-- Experimental functions  
-- Time-varying systems  
-
-This greatly widens the expressive space and enables patterns rarely seen in standard fractal renderers.
+ComplexFractals extends this idea by exploring higher-degree polynomials, Littlewood polynomials, nonlinear hybrids, and even time-varying functions. This opens the door to structures that traditional fractal renderers seldom reveal, greatly expanding the artistic and mathematical possibilities.
 
 ---
 
 ## 📝 License
 
-This project is distributed under the **Apache-2.0 License**.  
-See the `LICENSE` file for full legal details.
+This project is released under the **Apache-2.0 License**.  
+For details, consult the `LICENSE` file in the repository.
+
+---
